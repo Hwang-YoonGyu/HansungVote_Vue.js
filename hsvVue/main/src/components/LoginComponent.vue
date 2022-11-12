@@ -19,8 +19,8 @@
           <div class="col-12">
             <br>
             <form id="formId" action="/login" method="post" class="row g-3">
-              <input type="button" onclick=sendPostRequest() class="btn btn-primary float-end"
-                     value="log in" disabled="disabled" id="loginId"/>
+              <input type="button" class="btn btn-primary float-end"
+                     value="log in" id="loginId"/>
             </form>
           </div>
           <hr class="mt-4">
@@ -33,17 +33,24 @@
 </template>
 
 <script lang="ts">
-import {Options, Vue} from 'vue-class-component';
 
-@Options({})
-export default class HelloWorld extends Vue {
-  msg!: string
+import { Options, Vue } from 'vue-class-component';
+
+@Options({
+})
+export default class LoginComponent extends Vue {
 }
+
 window.onpageshow = function (event) {
   if (event.persisted || (window.performance && window.performance.navigation.type == 2)) {
     location.href = "/";
   }
 }
+// document.getElementById("loginId").onclick(function () {
+//   location.href = "/lobby";
+//
+// });
+
 
 // function sendPostRequest() {
 //   $("#loginId").prop("disabled", true);
@@ -68,29 +75,6 @@ window.onpageshow = function (event) {
 
 </script>
 
-<style>
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background-color: white;
-}
-main {
-  background-color: hsl(228, 26%, 96%);
-  min-height: 800px;
-}
-div {
-  display: block;
-  margin: auto;
-  position: relative;
-}
-footer {
-  position: absolute;
-  background-color: white;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-}
+<style scoped>
+
 </style>
